@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Розрахунок ваги та об'єму готівки</title>
+    
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/theme.css" rel="stylesheet">
+    
+    <link href="css/jquery-ui.css" rel="stylesheet">
+    
+    <!-- http://jquery.com/ -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+
+    <!-- http://getbootstrap.com/ -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="js/main.js"></script>
+    
+  </head>
+  <body role="document">
+       
+    <div class="container theme-showcase" role="main">
+      <div class="jumbotron bg-success">
+        <h2>Калькулятор разрахунку ваги та об'єму готівки</h2>
+          <p>Вітаємо! Наш калькулятор допоможе вам розрахувати фізичний об'єм кешу і підкаже де краще його зберігати.</p>
+          <p>Сервіс буде корисний в першу чергу депутатам, суддям, прокурорам та іншим чиновникам. А з січня 2017 року, після підвищення мінімалки, і звичайним людям.</p>
+      </div>
+      
+      <div class="panel panel-default">
+        <div class="panel-body">
+          
+          <form class="form-inline mainform" onsubmit="return false;">
+              <div class="form-group">
+                <label for="sum">Загальна сума готівки:</label>
+                <div class="input-group">
+                    <input type="number" required min="0" max="9999999999999" class="form-control" id="sum">
+                    <div class="input-group-addon">.00</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <select class="form-control" id="currency">
+                  <option value="UAH" selected>Гривень</option>
+                  <option value="USD">Доларів США</option>
+                  <option value="EUR">Євро</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="bills"> по:</label>
+                <select class="form-control" id="bills">
+                  <option value="0">Одній копійці</option>
+                  <option value="1">5 копійок</option>
+                  <option value="2">25 копійок</option>
+                  <option value="3">50 копійок</option>
+                  <option value="4">Одній гривні</option>
+                  <option value="5">5 гривень</option>
+                  <option value="6">10 гривень</option>
+                  <option value="7">20 гривень</option>
+                  <option value="8">50 гривень</option>
+                  <option value="9">100 гривень</option>
+                  <option value="10">200 гривень</option>
+                  <option value="11" selected>500 гривень</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary" id="calc"><span class="glyphicon glyphicon-usd"></span> Розрахувати</button>
+          </form>
+          
+        </div>
+     </div>
+     
+     <div class="panel panel-default result" id="result-panel">
+        <div class="panel-heading">Результати розрахунку:</div>
+        <div class="panel-body">
+          <table class="table table-hover table-responsive" id="result-table">
+            <tr>
+                <td class="col-sm-6">Кількість купюр/монет</td>
+                <td class="col-sm-6"><span class="text-danger amount"></span></td>
+            </tr>
+            <tr>
+                <td class="col-sm-6">Вага готівки</td>
+                <td class="col-sm-6"><span class="text-primary weight"></span></td>
+            </tr>
+            <tr>
+                <td class="col-sm-6">Об'єм</td>
+                <td class="col-sm-6"><span class="text-success volume"></td>
+            </tr>
+            <tr>
+                <td class="col-sm-6">Висота купюр/монет складених однією стопкою</td>
+                <td class="col-sm-6"><span class="text-info height"></span></td>
+            </tr>
+            <tr>
+                <td class="col-sm-6">Площа готівки розкладеної по одній купюрі/монеті</td>
+                <td class="col-sm-6"><span class="text-warning area"></span></td>
+            </tr>
+          </table>
+        </div>
+     </div>
+     
+     <div class="panel panel-default result">
+        <div class="panel-heading">Найкраще для зберігання такої кількості готівки підійде (виходячи із розрахованого об'єму):</div>
+        <div class="panel-body">
+          <div class="col-md-3"><img class="img-rounded store-img" src=""></div>
+          <div class="col-md-9 vertical-center">
+            <h2 class="text-success store-text"></h2>
+          </div>
+        </div>
+     </div>
+     
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- cash_test -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-1788943837180916"
+         data-ad-slot="7182916577"
+         data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+     
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-86537963-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    
+    </div>
+  </body>
+</html>

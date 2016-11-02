@@ -1,0 +1,47 @@
+body {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* background-image: url("..\\img\\back.jpg"); */
+  /* background-color: grey; */
+}
+
+.theme-dropdown .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+  width: auto;
+}
+
+.jumbotron {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.panel {
+    margin-bottom: 20px;
+}
+
+.panel-body {
+    padding: 10px;
+}
+
+#result-table {
+    font-size: 1.3em;
+    margin-bottom: 0px;
+}
+
+#result-table  span {
+    font-weight: bold;
+}
+
+h2.store-text {
+    margin-top: 50px;
+}

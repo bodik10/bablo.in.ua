@@ -1,0 +1,17 @@
+[
+    {"id": 0, "currency": "UAH", "name": "Одній копійці", "value": "0.01", "area": "0.00020096", "tall": "1.2", "weight": "1.5"},
+    {"id": 1, "currency": "UAH", "name": "5 копійок", "value": "0.05", "area": "0.00045216", "tall": "1.5", "weight": "4.3"},
+    {"id": 2, "currency": "UAH", "name": "25 копійок", "value": "0.25", "area": "0.0003396224", "tall": "1.35", "weight": "2.9"},
+    {"id": 3, "currency": "UAH", "name": "50 копійок", "value": "0.5", "area": "0.000415265", "tall": "1.55", "weight": "4.2"},
+    {"id": 4, "currency": "UAH", "name": "Одній гривні", "value": 1, "area": "0.007434", "tall": "0.1", "weight": "0.7373"},
+    {"id": 5, "currency": "UAH", "name": "5 гривень", "value": 5, "area": "0.007434", "tall": "0.1", "weight": "0.7373"},
+    {"id": 6, "currency": "UAH", "name": "10 гривень", "value": 10, "area": "0.008184", "tall": "0.1", "weight": "0.811704"},
+    {"id": 7, "currency": "UAH", "name": "20 гривень", "value": 20, "area": "0.00897", "tall": "0.1", "weight": "0.88966"},
+    {"id": 8, "currency": "UAH", "name": "50 гривень", "value": 50, "area": "0.009792", "tall": "0.1", "weight": "0.971188"},
+    {"id": 9, "currency": "UAH", "name": "100 гривень", "value": 100, "area": "0.01065", "tall": "0.1", "weight": 1},
+    {"id": 10, "currency": "UAH", "name": "200 гривень", "value": 200, "area": "0.0111", "tall": "0.1", "weight": "1.0622"},
+    {"id": 11, "currency": "UAH", "name": "500 гривень", "value": 500, "area": "0.01155", "tall": "0.1", "weight": "1.14555"},
+    {"id": 12, "currency": "USD", "name": "100 доларів США", "value": 100, "area": "0.01065", "tall": "0.1", "weight": 1},
+    {"id": 13, "currency": "EUR", "name": "100 євро", "value": 100, "area": "0.012054", "tall": "0.1", "weight": "1.03"},
+    {"id": 14, "currency": "EUR", "name": "500 євро", "value": 500, "area": "0.01312", "tall": "0.1", "weight": "1.12"}
+]
