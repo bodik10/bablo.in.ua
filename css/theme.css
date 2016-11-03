@@ -45,3 +45,7 @@ body {
 h2.store-text {
     margin-top: 50px;
 }
+
+span.volume, span.weight, span.height, span.area {
+	white-space: nowrap;
+}

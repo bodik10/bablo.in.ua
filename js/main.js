@@ -51,8 +51,8 @@ $(function(){
             var volume = area * (parseFloat(bill.tall) / 1000);     // m3
             
             $("span.amount").text(amount);
-            $("span.weight").text(weight.toFixed(3) + " кг");
-            $("span.height").text(height.toFixed(3) + " м");
+            $("span.weight").text(Math.trunc(weight) + " кг " + Math.round((weight - Math.trunc(weight)) * 1000) + " г");
+            $("span.height").text(Math.trunc(height) + " м " + Math.round((height - Math.trunc(height)) * 1000) + " мм");
             $("span.volume").html( (volume * 1000).toFixed(3) + " л, " + volume.toFixed(2) + " м<sup>3</sup>" );
             $("span.area").html( area.toFixed(3) + " м<sup>2</sup>, " + (area / 10000).toFixed(2) + " га, " + (area / 1000000).toFixed(2) + " км<sup>2</sup>" );
             
