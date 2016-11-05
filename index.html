@@ -3,8 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="калькулятор маси готівки, розрахунок ваги обєму висоти площі готівки, конвертер ваги обєму в гривні долари євро">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@BodikFedys">
+    <meta name="twitter:title" content="Калькулятор ваги готівки">
+    <meta name="twitter:description" content="Розрахунок площі, об'єму, маси, висоти кешу. А також зворотня конвертація ваги та об'єму готівкової маси в гривні, долари чи євро">
+    <meta name="twitter:image" content="http://bablo.in.ua/img/social_card_img.jpg">
+    <meta name="twitter:url" content="http://bablo.in.ua">
+    
+    <meta property="fb:app_id" content="1596618700647608">
+    <meta property="og:url" content="http://bablo.in.ua" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Калькулятор ваги готівки" />
+	<meta property="og:description" content="Розрахунок площі, об'єму, маси, висоти кешу. А також зворотня конвертація ваги та об'єму готівкової маси в гривні, долари чи євро" />
+	<meta property="og:image" content="http://bablo.in.ua/img/social_card_img.jpg" />
+    
     <title>Розрахунок ваги та об'єму готівки</title>
     
     <!-- Bootstrap -->
@@ -30,6 +45,8 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     
+    <script src="//load.sumome.com/" data-sumo-site-id="365977fac4da31c8ccffeeb6952224bb0870db0c4854f4d87630a8285d9a4286" async="async"></script>
+    
     <script src="js/main.js"></script>
     
   </head>
@@ -46,10 +63,24 @@
         <div class="panel-body">
           
           <form class="form-inline mainform" onsubmit="return false;">
+          
+              <div class="form-group">
+               <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Готівка &rarr; кг, га, м<sup>3</sup>...
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-header">Виберіть тип конвертації:</li>
+                  <li><a href="#" class="conv-type" data-conv-type="cashtokg" data-units=".00" data-description="Загальна сума готівки:">Готівка &rarr; кг, га, м<sup>3</sup>...</a></li>
+                  <li><a href="#" class="conv-type" data-conv-type="kgtocash" data-units="кг" data-description="Маса готівки:">кг &rarr; готівка</a></li>
+                  <li><a href="#" class="conv-type" data-conv-type="m3tocash" data-units="м<sup>3</sup>" data-description="Об'єм готівки:">м<sup>3</sup> &rarr; готівка</a></li>
+                </ul>
+              </div>
+              </div>
+              
               <div class="form-group">
                 <label for="sum">Загальна сума готівки:</label>
                 <div class="input-group">
-                    <input type="number" required min="0" max="9999999999999" class="form-control" id="sum">
+                    <input type="number" required min="0" max="9999999999999" step="1" class="form-control" id="sum">
                     <div class="input-group-addon">.00</div>
                 </div>
               </div>
@@ -77,13 +108,19 @@
                   <option value="11" selected>500 гривень</option>
                 </select>
               </div>
-              <button type="submit" class="btn btn-primary" id="calc"><span class="glyphicon glyphicon-usd"></span> Розрахувати</button>
+              <button type="submit" class="btn btn-primary" id="calc">Розрахувати</button>
           </form>
           
         </div>
      </div>
      
-     <div class="panel panel-default result" id="result-panel">
+     <div class="panel panel-default result result-money">
+         <div class="panel-body">
+            <h1 class="text-success"></h1>
+         </div>
+     </div>
+     
+     <div class="panel panel-default result result-kg" id="result-panel">
         <div class="panel-heading">Результати розрахунку:</div>
         <div class="panel-body">
           <table class="table table-hover table-responsive" id="result-table">
@@ -111,7 +148,7 @@
         </div>
      </div>
      
-     <div class="panel panel-default result">
+     <div class="panel panel-default result result-kg">
         <div class="panel-heading">Найкраще для зберігання такої кількості готівки підійде (виходячи із розрахованого об'єму):</div>
         <div class="panel-body">
           <div class="col-md-3"><img class="img-rounded store-img" src=""></div>
