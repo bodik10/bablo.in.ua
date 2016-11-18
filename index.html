@@ -48,6 +48,7 @@
     <script src="//load.sumome.com/" data-sumo-site-id="365977fac4da31c8ccffeeb6952224bb0870db0c4854f4d87630a8285d9a4286" async="async"></script>
     
     <script src="js/main.js"></script>
+	<script src="js/numtowords.js"></script>
     
   </head>
   <body role="document">
@@ -66,11 +67,11 @@
           
               <div class="form-group">
                <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Готівка &rarr; кг, га, м<sup>3</sup>...
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><span class="dropdown_caption">Готівка &rarr; кг, га, м<sup>3</sup>...</span>
                 <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                   <li class="dropdown-header">Виберіть тип конвертації:</li>
-                  <li><a href="#" class="conv-type" data-conv-type="cashtokg" data-units=".00" data-description="Загальна сума готівки:">Готівка &rarr; кг, га, м<sup>3</sup>...</a></li>
+                  <li><a href="#" class="conv-type" data-conv-type="cashtokg" data-units=".00" data-description="Сума готівки:">Готівка &rarr; кг, га, м<sup>3</sup>...</a></li>
                   <li><a href="#" class="conv-type" data-conv-type="kgtocash" data-units="кг" data-description="Маса готівки:">кг &rarr; готівка</a></li>
                   <li><a href="#" class="conv-type" data-conv-type="m3tocash" data-units="м<sup>3</sup>" data-description="Об'єм готівки:">м<sup>3</sup> &rarr; готівка</a></li>
                 </ul>
@@ -78,7 +79,7 @@
               </div>
               
               <div class="form-group">
-                <label for="sum">Загальна сума готівки:</label>
+                <label for="sum">Сума готівки:</label>
                 <div class="input-group">
                     <input type="number" required min="0" max="9999999999999" step="1" class="form-control" id="sum">
                     <div class="input-group-addon">.00</div>
@@ -86,9 +87,9 @@
               </div>
               <div class="form-group">
                 <select class="form-control" id="currency">
-                  <option value="UAH" selected>Гривень</option>
-                  <option value="USD">Доларів США</option>
-                  <option value="EUR">Євро</option>
+                  <option value="UAH" selected>грн.</option>
+                  <option value="USD">$</option>
+                  <option value="EUR">&euro;</option>
                 </select>
               </div>
               <div class="form-group">
@@ -124,6 +125,9 @@
         <div class="panel-heading">Результати розрахунку:</div>
         <div class="panel-body">
           <table class="table table-hover table-responsive" id="result-table">
+			<tr>
+				<td colspan="2" class="col-sm-12 numword"></td>
+			</tr>
             <tr>
                 <td class="col-sm-6">Кількість купюр/монет</td>
                 <td class="col-sm-6"><span class="text-danger amount"></span></td>

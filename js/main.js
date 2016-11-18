@@ -60,6 +60,7 @@ $(function(){
                 var area = amount * parseFloat(bill.area);              // m2
                 var volume = area * (parseFloat(bill.tall) / 1000);     // m3
                 
+				$("td.numword").text(Numtowords(sum) + " " + $("#currency option:selected").text());
                 $("span.amount").text(amount);
                 $("span.weight").text(Math.trunc(weight) + " кг " + Math.round((weight - Math.trunc(weight)) * 1000) + " г");
                 $("span.height").text(Math.trunc(height) + " м " + Math.round((height - Math.trunc(height)) * 1000) + " мм");
@@ -123,7 +124,7 @@ $(function(){
     
         convtype = $(this).data("conv-type");
         
-        $("button.dropdown-toggle").html(   $(this).html() );
+        $("span.dropdown_caption").html(    $(this).html() );
         $("label[for='sum']").text(         $(this).data("description") );
         $("div.input-group-addon").html(    $(this).data("units") )
         

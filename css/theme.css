@@ -51,10 +51,18 @@ h2.store-text {
     margin-top: 50px;
 }
 
+td.numword {
+    text-align: center;
+    font-size: 0.8em;
+    font-weight: bold;
+    /*background-color: #3c627b;
+    color: white;*/
+}
+
 span.volume, span.weight, span.height, span.area {
 	white-space: nowrap;
 }
 
 .dropdown {
-    margin-right: 30px;
+    margin-right: 10px;
 }
