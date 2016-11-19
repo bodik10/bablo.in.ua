@@ -7,10 +7,15 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Test</title>
     
-    <script src="//load.sumome.com/" data-sumo-site-id="365977fac4da31c8ccffeeb6952224bb0870db0c4854f4d87630a8285d9a4286" async="async"></script>
+    <script src="js/numtowords2.js"></script>
     
   </head>
   <body role="document">
+    <div id="test"></div>
     
+    <script>
+        document.getElementById("test").innerHTML = "TEST!";
+        document.getElementById("test").innerHTML = Numtowords(parseInt(12345678900));
+    </script>
   </body>
 </html>

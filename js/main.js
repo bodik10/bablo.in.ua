@@ -60,7 +60,7 @@ $(function(){
                 var area = amount * parseFloat(bill.area);              // m2
                 var volume = area * (parseFloat(bill.tall) / 1000);     // m3
                 
-				$("td.numword").text(Numtowords(sum) + " " + $("#currency option:selected").text());
+				$("span.numword").text(Numtowords(sum) + " " + $("#currency option:selected").text());
                 $("span.amount").text(amount);
                 $("span.weight").text(Math.trunc(weight) + " кг " + Math.round((weight - Math.trunc(weight)) * 1000) + " г");
                 $("span.height").text(Math.trunc(height) + " м " + Math.round((height - Math.trunc(height)) * 1000) + " мм");
@@ -97,6 +97,7 @@ $(function(){
                 var result = sum.moneyFormat() + " " + $("#currency option:selected").text();
                 
                 $("div.panel.result-money h1").text(result);
+                $("span.numword").text(Numtowords(parseInt(sum), 0) + " " + $("#currency option:selected").text());
                 $("div.panel.result.result-money").show();
             break;
             
@@ -112,6 +113,7 @@ $(function(){
                 var result = sum.moneyFormat() + " " + $("#currency option:selected").text();
                 
                 $("div.panel.result-money h1").text(result);
+                $("span.numword").text(Numtowords(parseInt(sum), 0) + " " + $("#currency option:selected").text());
                 $("div.panel.result-money").show();
             break;
             }

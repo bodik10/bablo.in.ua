@@ -1,4 +1,4 @@
-﻿/*
+/*
 	(с) Bohdan Fedys
 	Функція для запису числа словами на українській мові
 	підтримується числа до 999 трильйонів, але можна збільшити доповнивши змінну large
@@ -7,7 +7,8 @@
 	Numtowords(1781) 	// "одна тисяча сімсот вісімдесят один"
 	Numtowords(41, 1) 	// "сорок одна"
 */
-function Numtowords(n, typeOfLastWord = 0){
+
+function Numtowords(n, typeOfLastWord){
 	var teens = [
         "",
         "один",// "одна",
@@ -27,7 +28,11 @@ function Numtowords(n, typeOfLastWord = 0){
         ["тисяча","тисячі","тисяч"],
         ["мільйон","мільйона","мільйонів"],
         ["мільярд","мільярда","мільярдів"],
-        ["трильйон","трильйона","трильйонів"]
+        ["трильйон","трильйона","трильйонів"],
+        ["квадрильйон","квадрильйона","квадрильйонів"],
+        ["квінтильйон","квінтильйона","квінтильйонів"],
+        ["секстильйон","секстильйона","секстильйонів"],
+        ["септильйон","септильйона","септильйонів"]
         // ...
     ];
 	
@@ -70,10 +75,10 @@ function Numtowords(n, typeOfLastWord = 0){
 		if (triple_num == 0)
 			return;
 		
-		var grade = triples.length - 1 - index, // розряд (0 — менше 1000, 1 — більше 1000 і менше 10000000 і тд.)
-			type = 0, // відмінювання: "мільйон","мільйона","мільйонів"
-			triple_words = say_triple(triple_num),
-			triple_last_word = triple_words[triple_words.length - 1];
+		var grade = triples.length - 1 - index; // розряд (0 — менше 1000, 1 — більше 1000 і менше 10000000 і тд.)
+		var type = 0; // відмінювання: "мільйон","мільйона","мільйонів"
+		var triple_words = say_triple(triple_num);
+		var triple_last_word = triple_words[triple_words.length - 1];
 		
 		if (triple[triple.length-1] == "1" && triple[triple.length-2] != "1"){
             type = 0; // 1 мільйон, 21 мільйон
@@ -97,7 +102,4 @@ function Numtowords(n, typeOfLastWord = 0){
 	});
 	
 	return words.join(" ");
-    
-    //return triples;
-    //return say_triple(n, type).filter(function(elem){return elem;}).join(" ");
 }
